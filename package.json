@@ -12,9 +12,9 @@
     "test": "npx hardhat test",
     "prettier": "prettier --write test/**/*.js && prettier --write test/*/*/*.js && prettier --write deploy/*.js && prettier --write tasks/*.js && prettier --write contracts/**/*.sol && prettier --write contracts/**/**/*.sol && prettier --write contracts/**/**/**/*.sol",
     "lint": "yarn prettier && solhint 'contracts/*.sol' && solhint 'contracts/**/*.sol' && solhint 'contracts/**/**/*.sol' && solhint 'contracts/**/**/**/*.sol'",
-    "deploy:mainnet": "env DEPLOY_NETWORK=MAINNET npx hardhat run --network mainnet",
+    "deploy:mainnet": "env DEPLOY_NETWORK=MAINNET npx hardhat run --network ethereum",
     "deploy:goerli": "env DEPLOY_NETWORK=GOERLI npx hardhat run --network goerli",
-    "deploy:arbitrumOne": "env DEPLOY_NETWORK=ARBITRUM npx hardhat run --network arbitrum",
+    "deploy:arbitrumOne": "env DEPLOY_NETWORK=ARBITRUM_MAINNET npx hardhat run --network arbitrum",
     "deploy:arbitrumGoerli": "env DEPLOY_NETWORK=ARBITRUM_GOERLI npx hardhat run --network arbitrum-goerli"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "@uniswap/v2-core": "^1.0.1",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "dotenv": "^10.0.0",
-    "hardhat": "^2.8.0",
+    "hardhat": "^2.19.0",
     "hardhat-contract-sizer": "^2.1.1",
     "hardhat-deploy": "^0.10.5",
     "hardhat-deploy-ethers": "^0.3.0-beta.13",

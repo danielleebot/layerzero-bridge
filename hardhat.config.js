@@ -101,7 +101,7 @@ module.exports = {
 
     networks: {
         ethereum: {
-            url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+            url: "https://eth-mainnet.g.alchemy.com/v2/cqd6N_P3vnCZ1uCbpBWB0flf0Qje1tIg", // public infura endpoint
             chainId: 1,
             accounts: accounts("mainnet"),
         },
@@ -126,7 +126,7 @@ module.exports = {
             goerli: process.env.ETHERSCAN_GOERLI,
             mainnet: process.env.ETHERSCAN_MAINNET,
             arbitrumGoerli: process.env.ETHERSCAN_ARBITRUM_GOERLI,
-            arbitrum: process.env.ETHERSCAN_ARBITRUM_MAINNET,
+            arbitrumOne: process.env.ETHERSCAN_ARBITRUM_MAINNET,
         },
     },
 }
