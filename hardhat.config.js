@@ -110,6 +110,11 @@ module.exports = {
             chainId: 42161,
             accounts: accounts("mainnet"),
         },
+        optimism: {
+            url: `https://mainnet.optimism.io`,
+            chainId: 10,
+            accounts: accounts("mainnet"),
+        },
         goerli: {
             url: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
             chainId: 5,
@@ -118,6 +123,11 @@ module.exports = {
         "arbitrum-goerli": {
             url: `https://goerli-rollup.arbitrum.io/rpc/`,
             chainId: 421613,
+            accounts: accounts("goerli"),
+        },
+        "optimism-goerli": {
+            url: `https://goerli.optimism.io`,
+            chainId: 420,
             accounts: accounts("goerli"),
         },
     },

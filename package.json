@@ -15,7 +15,9 @@
     "deploy:mainnet": "env DEPLOY_NETWORK=MAINNET npx hardhat run --network ethereum",
     "deploy:goerli": "env DEPLOY_NETWORK=GOERLI npx hardhat run --network goerli",
     "deploy:arbitrumOne": "env DEPLOY_NETWORK=ARBITRUM_MAINNET npx hardhat run --network arbitrum",
-    "deploy:arbitrumGoerli": "env DEPLOY_NETWORK=ARBITRUM_GOERLI npx hardhat run --network arbitrum-goerli"
+    "deploy:arbitrumGoerli": "env DEPLOY_NETWORK=ARBITRUM_GOERLI npx hardhat run --network arbitrum-goerli",
+    "deploy:optimism": "env DEPLOY_NETWORK=OPTIMISM_MAINNET npx hardhat run --network optimism",
+    "deploy:optimismGoerli": "env DEPLOY_NETWORK=OPTIMISM_GOERLI npx hardhat run --network optimism-goerli"
   },
   "dependencies": {
     "@layerzerolabs/lz-evm-sdk-v1-0.7": "^1.5.14",
