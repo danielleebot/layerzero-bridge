@@ -12,8 +12,8 @@ async function main() {
     if (LOCAL_NETWORK === "GOERLI" && chainId !== 420) throw Error(" chainId is not correct")
     if (LOCAL_NETWORK === "MAINNET" && chainId !== 10) throw Error(" chainId is not correct")
 
-    const name = "ETH Stable"
-    const symbol = "ETHS"
+    const name = "ETH Coin"
+    const symbol = "ETHC"
     const sharedDecimals = 0
     const remoteEndpoint = endpoints[`ENDPOINT_OPTIMISM_${LOCAL_NETWORK}`]
 

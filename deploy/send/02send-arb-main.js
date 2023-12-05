@@ -3,8 +3,8 @@ const endpoints = require("../endpoints")
 
 // should be deployed on goerli / mainnet
 async function main() {
-    const LOCAL_NETWORK = process.env.TESTNET === "1" ? "ARBITRUM_GOERLI" : "ARBITRUM_MAINNET"
-    const REMOTE_NETWORK = process.env.TESTNET === "1" ? "GOERLI" : "MAINNET"
+    const LOCAL_NETWORK = process.env.TESTNET === "1" ? "GOERLI" : "MAINNET"
+    const REMOTE_NETWORK = process.env.TESTNET === "1" ? "ARBITRUM_GOERLI" : "ARBITRUM_MAINNET"
     const DEPLOYER = process.env.TESTNET === "1" ? "DEPLOYER_TESTNET" : "DEPLOYER_MAINNET"
 
     const [deployer] = await ethers.getSigners()
@@ -13,7 +13,7 @@ async function main() {
     if (chainId != 42161) throw Error(" chainId is not correct")
 
     // const localAddress = process.env[`OFT_${LOCAL_NETWORK}`]
-    const remoteAddress = process.env[`OFT_${REMOTE_NETWORK}`]
+    const remoteAddress = process.env[`REMOTE_OFT_${REMOTE_NETWORK}`]
     const localChainId = endpoints[`ENDPOINT_CHAIN_ID_${LOCAL_NETWORK}`]
     // const remoteChainId = endpoints[`ENDPOINT_CHAIN_ID_${REMOTE_NETWORK}`]
 
@@ -25,6 +25,8 @@ async function main() {
     const remoteOFT = await ethers.getContractAt("OFTV2", remoteAddress)
     const { nativeFee } = await remoteOFT.estimateSendFee(localChainId, deployerAddressBytes32, amount, false, "0x")
     console.log(`1-4: native fee is ${ethers.utils.formatEther(nativeFee)}`)
+
+    console.log({ remoteOFT: remoteOFT.address, localChainId })
 
     // send
     await remoteOFT

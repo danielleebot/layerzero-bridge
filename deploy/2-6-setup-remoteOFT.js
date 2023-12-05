@@ -13,11 +13,13 @@ async function main() {
     if (LOCAL_NETWORK === "MAINNET" && chainId !== 10) throw Error(" chainId is not correct")
 
     const localAddress = process.env[`LOCAL_OFT_${LOCAL_NETWORK}`]
-    const remoteAddress = process.env[`REMOTE_OFT_${LOCAL_NETWORK}`]
+    const remoteAddress = process.env[`REMOTE_OFT_OPTIMISM_${LOCAL_NETWORK}`]
     const localChainId = endpoints[`ENDPOINT_CHAIN_ID_${LOCAL_NETWORK}`]
     // const remoteChainId = endpoints[`ENDPOINT_CHAIN_ID_OPTIMISM_${LOCAL_NETWORK}`]
     // const remotePath = ethers.utils.solidityPack(["address", "address"], [remoteAddress, localAddress])
     const localPath = ethers.utils.solidityPack(["address", "address"], [localAddress, remoteAddress])
+
+    console.log({ localAddress, remoteAddress, localChainId, localPath })
 
     // deploy
     const remoteOFT = await ethers.getContractAt("OFTV2", remoteAddress)

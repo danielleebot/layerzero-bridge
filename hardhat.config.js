@@ -137,6 +137,7 @@ module.exports = {
             mainnet: process.env.ETHERSCAN_MAINNET,
             arbitrumGoerli: process.env.ETHERSCAN_ARBITRUM_GOERLI,
             arbitrumOne: process.env.ETHERSCAN_ARBITRUM_MAINNET,
+            optimisticEthereum: process.env.ETHERSCAN_OPTIMISM_MAINNET,
         },
     },
 }

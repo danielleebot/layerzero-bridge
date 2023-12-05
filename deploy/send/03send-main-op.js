@@ -26,8 +26,10 @@ async function main() {
     const allowance = await erc20.allowance(deployer.address, localAddress)
     if (allowance.lt(amount)) {
         await erc20.connect(deployer).approve(localAddress, amount)
+        console.log(`1-1: approved successfully`)
+
+        await new Promise((r) => setTimeout(r, 5000))
     }
-    console.log(`1-1: approved successfully`)
 
     // fee
     const localOFT = await ethers.getContractAt("ProxyOFTV2", localAddress)

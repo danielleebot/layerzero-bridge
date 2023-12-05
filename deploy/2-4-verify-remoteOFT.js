@@ -5,7 +5,7 @@ async function main() {
     const LOCAL_NETWORK = process.env.TESTNET === "1" ? "GOERLI" : "MAINNET"
     if (process.env.DEPLOY_NETWORK !== `OPTIMISM_${LOCAL_NETWORK}`) throw Error("deploy network is not correct")
 
-    const remoteOFT = process.env[`REMOTE_OFT_${LOCAL_NETWORK}`]
+    const remoteOFT = process.env[`REMOTE_OFT_OPTIMISM_${LOCAL_NETWORK}`]
     const name = "ETH Stable"
     const symbol = "ETHS"
     const sharedDecimals = 0
